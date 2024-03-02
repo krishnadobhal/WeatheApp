@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKYGAUGE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/target.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        background: url('<%= ibg%>') no-repeat center center fixed;
+        background-size: cover;
+    }
+</style>
+<body>
+    <video src=<%=vbg %> loop autoplay muted plays-inline class="videobg"></video>
+    <div class="weather">
+        <div class="logo">
+            <img src="secondlogo.png" alt="logo">
+        </div>
+        <div class="container">
+            <div class="temp"><%=Temp %>°C</div>
+            <div class="city-time">
+                <h1> <%=City%> </h1> 
+                <small><%=time%></small>             
+                    
+            </div>
+            <div class="detail">
+                <img src=<%=img %> alt="efr">
+                <span class="condition"><%=Type%></span>
+            </div>
+            
+        </div>
+        
+    </div>
+    <div class="details">
+        <form method="post" action="/target" role="search">
+            <label for="search">Search for stuff</label>
+            <input id="search" type="text" placeholder="Search..." name="cityName" required />
+            <button type="submit">Go</button>    
+        </form>
+        
+        </form>
+        <div class="weatherinfo">
+            <div>
+                <span class="title">HUMIDITY</span>
+                <span class="value"><%=Humidity %>%</span>
+            </div>
+            <div>
+                <span class="title">PRESSURE</span>
+                <span class="value"><%=Pressure%></span>
+            </div>
+            
+            <div>
+                <span class="title">WIND</span>
+                <span class="value"><%=WindSpeed%> Km/h <%=WindSpeedDirection%></span>
+            </div>
+            <div>
+                <span class="title">VISIBILITY</span>
+                <span class="value"><%=Visibility%></span>
+            </div>
+            <div>
+                <span class="title">CLOUD</span>
+                <span class="value"><%=cloud%>%</span>
+            </div>
+            <div>
+                <span class="title">MIN/MAX Temp</span>
+                <span class="value"><%=Min %>°C/<%=Max %>°C</span>
+            </div>
+        </div>
+            <div class="forecast">
+
+                <ul class="days-list">
+                    <li>
+                        <img src=<%=two %> alt="" class="pp">
+                        <span>Sun</span>
+                        <span class="day-temp"><%=Temp2 %>°C</span>
+                    </li>
+                    <li>
+                        <img src=<%=three %> alt="" class="pp">
+                        <span>Mon</span>
+                        <span class="day-temp"><%=Temp3 %>°C</span>
+                    </li>
+                    <li>
+                        <img src=<%=four %> alt="" class="pp">
+                        <span>Tues</span>
+                        <span class="day-temp"><%=Temp4 %>°C</span>
+                    </li>
+                    <li>
+                        <img src=<%=five %> alt="" class="pp">
+                        <span>Wed</span>
+                        <span class="day-temp"><%=Temp5 %>°C</span>
+                    </li>
+                    <li>
+                        <img src=<%=six%> alt="" class="pp">
+                        <span>Thu</span>
+                        <span class="day-temp"><%=Temp6 %>°C</span>
+                    </li>
+                    <li>
+                        <img src=<%=seven%> alt="" class="pp">
+                        <span>Fri</span>
+                        <span class="day-temp"><%=Temp7 %>°C</span>
+                    </li>
+                    <li class="seventhday">
+                        <img src=<%=eight%> alt="" class="pp">
+                        <span>Sat</span>
+                        <span class="day-temp"><%=Temp8 %>°C</span>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>

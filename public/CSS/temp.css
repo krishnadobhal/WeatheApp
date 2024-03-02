@@ -1,0 +1,273 @@
+body{
+    
+    
+    margin: 0px;
+    padding: 0px;
+    /* background-image:url("../mainBG.jpg"); */
+}
+video{
+  left: -1%;
+  position: absolute;
+  width: 101%;
+  z-index: -1;
+}
+
+
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FFF2D8;
+}
+.container{
+  margin-right: 10px;
+}
+.submit{
+    flex: 1;
+}
+.logo{
+    overflow-x: hidden;
+    width: 10rem;
+    margin-top: 1em;
+}
+.logoimg{
+  position: relative;
+    left: 11px;
+    width: 5rem;
+  
+}
+.form {
+    --input-text-color: #000000;
+    --input-bg-color: transparent;
+    --focus-input-bg-color: transparent;
+    --text-color: #080000;
+    --active-color: #0b0000;  /*#1b9bee;*/
+    --width-of-input: 23rem;
+    --inline-padding-of-input: 0.4rem;
+    --gap: 1.6rem;
+  }
+  /* form style */
+  .form {
+    font-size: 2.5rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: var(--width-of-input);
+    position: relative;
+    isolation: isolate;
+  }
+  /* a fancy bg for showing background and border when focus. */
+  .fancy-bg {
+    position: absolute;
+    width: 100%;
+    inset: 0;
+    background: var(--input-bg-color);
+    border-radius: 30px;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  /* label styling */
+  label {
+    width: 100%;
+    padding: 0.4rem;
+    height: 30px;
+    padding-inline: var(--inline-padding-of-input);
+    display: flex;
+    align-items: center;
+  }
+  
+  .search,.close-btn {
+    position: absolute;
+  }
+  /* styling search-icon */
+  .search {
+    fill: var(--text-color);
+    left: var(--inline-padding-of-input);
+    
+    font-family: 'Roboto', sans-serif;;
+  }
+  /* svg -- size */
+  svg {
+    width: 1.5rem;
+    display: block;
+  }
+  /* styling of close button */
+  .close-btn {
+    border: none;
+    right: var(--inline-padding-of-input);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    padding: 0.1em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--active-color);
+    opacity: 0;
+    visibility: hidden;
+  }
+  /* styling of input */
+  .input {
+    color: var(--input-text-color);
+    width: 100%;
+    margin-inline: min(2em,calc(var(--inline-padding-of-input) + var(--gap)));
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+  }
+  
+  .input:focus {
+    outline: none;
+  }
+  
+  .input::placeholder {
+    color: var(--text-color)
+  }
+  /* input background change in focus */
+  .input:focus ~ .fancy-bg {
+    border: 1px solid rgb(98, 98, 98);
+    filter: blur(1.5px);
+    background: var(--focus-input-bg-color);
+  }
+  /* search icon color change in focus */
+  .input:focus ~ .search {
+    fill: rgb(0, 0, 0);
+  }
+  /* showing close button when typing */
+  .input:valid ~ .close-btn {
+    opacity: 1;
+    visibility: visible;
+  }
+  /* this is for the default background in input,when selecting autofill options -- you can remove this code if you do not want to override the browser style.  */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+  }
+  .icon{
+    width: 13.5rem;
+  }
+.main-Content{
+  margin-top: 10px;
+  margin-right: 10px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-items: stretch;
+  column-gap: 5rem;
+  row-gap: 4rem;
+}
+
+.item-A{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 130px 130px 100px 50px 100px 100px ;
+  justify-items: center;
+
+}
+.item-b{
+  font-size: 4rem;
+  font-family: 'Noto Sans', sans-serif;
+}
+.item-c{
+  font-size: 2rem;
+}
+.item-d,.item-e,.item-f{
+  font-size: 1.2rem;
+}
+.item-g,.item-h,.item-i,.item-j,.item-k,.item-l,.item-m,.item-n,.item-A{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid orange;
+  border-radius: 8%;
+  box-shadow: orange 1px 1px 1px 1px;
+  backdrop-filter: blur(5px);
+  font-size: 1.5rem;
+}
+
+@media(max-width:570px){
+  .form {
+    --width-of-input: 100%;
+  }
+  label {
+    height: 2rem;
+  }
+  .input {
+    font-size: 1rem;
+  }
+}
+@media(max-width:1000px){
+  body{
+    background-image:url("../image-background/windy.jpg");
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-position: 69%;
+
+}
+video{
+  display: none;
+}
+  .main-Content{
+    margin-top: 10px;
+    margin-right: 10px;
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows: 1fr 1fr 0.8fr 0.8fr 0.8fr 0.8fr;
+    justify-items: center;
+    align-items: center;
+    column-gap: 0rem;
+    row-gap: 0rem;
+    font-family: 'Noto Sans', sans-serif;
+  }
+  .item-A{
+    font-family: 'Inter', sans-serif;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-template-columns: 1fr;
+    grid-template-rows: 120px ;
+    grid-template-rows: 120px 66px 89px 35px 53px 100px;
+    justify-items: center;
+  }
+  .icon{
+    width: 10rem;
+  }
+  .item-b{
+    font-size: 2rem;
+    font-family: 'Noto Sans', sans-serif;
+  }
+  .item-c{
+    font-size: 1.7rem;
+  }
+  .item-e{
+    font-size: 1.3rem;
+  }
+  .item-g,.item-h,.item-i,.item-j,.item-k,.item-l,.item-m,.item-n{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 0px solid white;
+    font-weight: 1000;
+    border-radius: 8%;
+    box-shadow:orange 0px 0px 0px 0px;
+    backdrop-filter: blur(1px);
+    font-size: 1.2rem;
+  }
+}
